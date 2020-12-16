@@ -84,6 +84,8 @@ void setup() {
   setup_wifi();
   client.setClient(espClient);
   client.setServer(mqtt_server, mqtt_port);
+
+  
   
   delay(1000);
 
@@ -93,7 +95,7 @@ void loop() {
   if (!client.connected()) {
       reconnect();
     }
-    client.loop();
+    //client.loop();
   
   getSendTemperatures();
   delay(1000);
