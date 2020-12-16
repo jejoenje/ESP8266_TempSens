@@ -3,7 +3,7 @@
 #include <DallasTemperature.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include "init.h"
+#include "init.h"             // external constants
 
 #define ONE_WIRE_BUS D1
 
