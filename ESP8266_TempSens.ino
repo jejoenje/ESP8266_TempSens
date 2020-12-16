@@ -85,18 +85,25 @@ void setup() {
   client.setClient(espClient);
   client.setServer(mqtt_server, mqtt_port);
 
-  
-  
+  if ( !client.connected() ) 
+  {
+    reconnect();
+  }
+
+  getSendTemperatures();
   delay(1000);
+
+  ESP.deepSleep(600e5);
+
 
 }
 
 void loop() {
-  if (!client.connected()) {
-      reconnect();
-    }
-    //client.loop();
-  
-  getSendTemperatures();
-  delay(1000);
+//  if (!client.connected()) {
+//      reconnect();
+//    }
+//    //client.loop();
+//  
+//  getSendTemperatures();
+//  delay(1000);
 }
